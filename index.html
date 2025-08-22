@@ -25,7 +25,7 @@
       font-weight: 400;
     }
     
-    .bg-main { background: #0a0a0a; }
+    .bg-main { background: #ffffff; }
     
     .text-gradient {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -65,7 +65,7 @@
     p {
       font-size: 1.125rem;
       line-height: 1.7;
-      color: #d1d5db;
+      color: #374151;
       margin-bottom: 1.5rem;
       max-width: 65ch;
     }
@@ -103,12 +103,11 @@
     
     /* Card improvements */
     .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
       border-radius: 1.25rem;
-      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(10px);
       padding: 2rem;
     }
     
@@ -116,7 +115,7 @@
       transform: translateY(-8px);
       box-shadow: 0 20px 40px 0 rgba(102,126,234,0.15);
       border-color: rgba(102,126,234,0.3);
-      background: rgba(255,255,255,0.05);
+      background: #ffffff;
     }
     
     /* Button improvements */
@@ -152,6 +151,94 @@
     @media (min-width: 768px) {
       .grid-cards {
         gap: 2.5rem;
+      }
+    }
+    
+    /* Carousel styles */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      padding: 0 1rem;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 2rem;
+    }
+    
+    .carousel-slide {
+      flex: 0 0 calc(25% - 1.5rem);
+      min-width: 280px;
+    }
+    
+    @media (max-width: 1024px) {
+      .carousel-slide {
+        flex: 0 0 calc(50% - 1rem);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .carousel-slide {
+        flex: 0 0 calc(100% - 0.5rem);
+      }
+    }
+    
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+      background: #667eea;
+      transform: scale(1.2);
+    }
+    
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(102, 126, 234, 0.1);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      color: #667eea;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .carousel-arrow:hover {
+      background: rgba(102, 126, 234, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-arrow.prev {
+      left: 0;
+    }
+    
+    .carousel-arrow.next {
+      right: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .carousel-arrow {
+        display: none;
       }
     }
     
@@ -206,9 +293,9 @@
     }
     
     header.scrolled {
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       padding: 1rem 0;
     }
     
@@ -218,6 +305,7 @@
       font-size: 1rem;
       transition: all 0.2s ease;
       position: relative;
+      color: #374151;
     }
     
     nav a:hover {
@@ -244,28 +332,30 @@
       transition: all 0.3s ease;
       padding: 0.5rem;
       border-radius: 50%;
+      color: #6b7280;
     }
     
     .social-icons a:hover {
       background: rgba(102,126,234,0.1);
       transform: translateY(-2px);
+      color: #667eea;
     }
   </style>
 </head>
-<body class="bg-main text-white overflow-x-hidden">
+<body class="bg-main text-gray-900 overflow-x-hidden">
   <!-- Header -->
   <header class="w-full container-padding flex flex-col md:flex-row md:justify-between md:items-center max-w-7xl mx-auto relative">
     <div class="flex justify-start w-full md:justify-start md:w-auto">
-      <div class="h-16 w-16 md:h-20 md:w-20 flex items-center justify-center rounded-full">
-        <span class="text-white text-3xl md:text-4xl font-extrabold tracking-tight select-none">[<span style="letter-spacing:0">c</span>w]</span>
+      <div class="h-20 w-20 md:h-24 md:w-24 flex items-center justify-center rounded-full">
+        <span class="text-gray-900 text-4xl md:text-5xl font-extrabold tracking-tight select-none">[<span style="letter-spacing:0">c</span>w]</span>
       </div>
     </div>
     <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="absolute right-4 top-1/2 transform -translate-y-1/2 btn-primary text-sm md:hidden">Get Started</a>
     <nav class="hidden md:flex space-x-8 mt-0">
-      <a href="#home" class="text-white hover:text-indigo-400 transition">Home</a>
-      <a href="#about" class="text-white hover:text-indigo-400 transition">About</a>
-      <a href="#services" class="text-white hover:text-indigo-400 transition">Services</a>
-      <a href="#contact" class="text-white hover:text-indigo-400 transition">Contact</a>
+      <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+      <a href="#about" class="hover:text-indigo-400 transition">About</a>
+      <a href="#services" class="hover:text-indigo-400 transition">Services</a>
+      <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
     </nav>
     <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="hidden md:inline-block btn-primary text-center">Get Started</a>
   </header>
@@ -287,7 +377,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section-spacing bg-black/80">
+  <section id="about" class="section-spacing bg-gray-50">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal">About ConversionWing</h2>
       <p class="text-lg mb-12 reveal reveal-delay-1 mx-auto">
@@ -296,11 +386,11 @@
       <div class="grid-cards max-w-4xl mx-auto">
         <div class="card reveal reveal-delay-2">
           <h3>Our Mission</h3>
-          <p class="text-gray-300 mb-0">To empower brands to achieve their full digital potential through innovative, results-oriented social media marketing.</p>
+          <p class="text-gray-600 mb-0">To empower brands to achieve their full digital potential through innovative, results-oriented social media marketing.</p>
         </div>
         <div class="card reveal reveal-delay-3">
           <h3>Our Vision</h3>
-          <p class="text-gray-300 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
+          <p class="text-gray-600 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
         </div>
       </div>
     </div>
@@ -310,22 +400,22 @@
   <section id="services" class="section-spacing">
     <div class="max-w-7xl mx-auto container-padding">
       <h2 class="text-center text-gradient reveal mb-16">Our Services</h2>
-      <div class="grid-cards">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="card text-center reveal reveal-delay-1">
           <h3>Social Media Management</h3>
-          <p class="text-gray-300 mb-0">Strategic content creation, scheduling, and audience engagement across all major platforms.</p>
+          <p class="text-gray-600 mb-0">Strategic content creation, scheduling, and audience engagement across all major platforms.</p>
         </div>
         <div class="card text-center reveal reveal-delay-2">
           <h3>Providing Sales Professionals</h3>
-          <p class="text-gray-300 mb-0">Connect with pre-vetted, high-performing sales experts to accelerate your business growth and conversions.</p>
+          <p class="text-gray-600 mb-0">Connect with pre-vetted, high-performing sales experts to accelerate your business growth and conversions.</p>
         </div>
         <div class="card text-center reveal reveal-delay-3">
           <h3>Paid Advertising</h3>
-          <p class="text-gray-300 mb-0">ROI-driven advertising campaigns on Facebook, Instagram, LinkedIn, and more.</p>
+          <p class="text-gray-600 mb-0">ROI-driven advertising campaigns on Facebook, Instagram, LinkedIn, and more.</p>
         </div>
         <div class="card text-center reveal reveal-delay-4">
           <h3>Influencer Marketing</h3>
-          <p class="text-gray-300 mb-0">Partner with top influencers to amplify your brand and drive measurable results.</p>
+          <p class="text-gray-600 mb-0">Partner with top influencers to amplify your brand and drive measurable results.</p>
         </div>
       </div>
       <div class="text-center mt-16">
@@ -335,17 +425,17 @@
   </section>
 
   <!-- Testimonials Section (Placeholder) -->
-  <section class="section-spacing bg-black/80">
+  <section class="section-spacing bg-gray-50">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal mb-16">Client Testimonials</h2>
       <div class="grid-cards max-w-4xl mx-auto">
         <div class="card reveal reveal-delay-1">
           <p class="text-lg mb-6">"ConversionWing tripled our Instagram engagement in just two months. Their expertise is unmatched."</p>
-          <span class="font-bold text-indigo-400">— Marketing Director, Ecom Brand</span>
+          <span class="font-bold text-indigo-600">— Marketing Director, Ecom Brand</span>
         </div>
         <div class="card reveal reveal-delay-2">
           <p class="text-lg mb-6">"Professional, creative, and always ahead of the curve. Our brand visibility has never been stronger."</p>
-          <span class="font-bold text-indigo-400">— CEO, Startup</span>
+          <span class="font-bold text-indigo-600">— CEO, Startup</span>
         </div>
       </div>
     </div>
@@ -381,7 +471,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 bg-black/90 text-center text-gray-400">
+  <footer class="py-12 bg-gray-900 text-center text-gray-300">
     <div class="max-w-7xl mx-auto container-padding">
       <div class="mb-4">
         &copy; <script>document.write(new Date().getFullYear())</script> ConversionWing. All rights reserved.
@@ -437,6 +527,8 @@
         }
       });
     });
+
+
   </script>
 </body>
 </html> 
