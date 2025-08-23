@@ -25,7 +25,7 @@
       font-weight: 400;
     }
     
-    .bg-main { background: #ffffff; }
+    .bg-main { background: #0a0a0a; }
     
     .text-gradient {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -65,7 +65,7 @@
     p {
       font-size: 1.125rem;
       line-height: 1.7;
-      color: #374151;
+      color: #d1d5db;
       margin-bottom: 1.5rem;
       max-width: 65ch;
     }
@@ -103,19 +103,161 @@
     
     /* Card improvements */
     .card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 1.25rem;
-      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 200px;
     }
     
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px 0 rgba(102,126,234,0.15);
       border-color: rgba(102,126,234,0.3);
-      background: #ffffff;
+      background: rgba(255,255,255,0.05);
+    }
+    
+    /* Service card specific styles for consistent alignment */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 220px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      min-height: 3rem;  /* forces equal header height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .service-card p {
+      margin: 0;
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+    
+    /* Cinematic video section styles - 9:16 aspect ratio */
+    .cinematic-section {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-background {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      z-index: 1;
+    }
+    
+    /* Desktop: Center video with black background on sides */
+    @media (min-width: 769px) {
+      .video-background {
+        max-width: 56.25vh; /* 9:16 aspect ratio */
+        max-height: 100vh;
+      }
+    }
+    
+    /* Mobile: Full width */
+    @media (max-width: 768px) {
+      .video-background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    /* Floating sound button */
+    .sound-button {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(102, 126, 234, 0.5);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    .sound-button:hover {
+      background: rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.8);
+      box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+      transform: scale(1.1);
+    }
+    
+    .sound-button svg {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease;
+    }
+    
+    .sound-button.muted svg {
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .sound-button {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        width: 50px;
+        height: 50px;
+      }
+      
+      .sound-button svg {
+        width: 20px;
+        height: 20px;
+      }
     }
     
     /* Button improvements */
@@ -293,9 +435,9 @@
     }
     
     header.scrolled {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(20px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
       padding: 1rem 0;
     }
     
@@ -305,7 +447,6 @@
       font-size: 1rem;
       transition: all 0.2s ease;
       position: relative;
-      color: #374151;
     }
     
     nav a:hover {
@@ -332,30 +473,30 @@
       transition: all 0.3s ease;
       padding: 0.5rem;
       border-radius: 50%;
-      color: #6b7280;
     }
     
     .social-icons a:hover {
       background: rgba(102,126,234,0.1);
       transform: translateY(-2px);
-      color: #667eea;
     }
+    
+
   </style>
 </head>
-<body class="bg-main text-gray-900 overflow-x-hidden">
+<body class="bg-main text-white overflow-x-hidden">
   <!-- Header -->
   <header class="w-full container-padding flex flex-col md:flex-row md:justify-between md:items-center max-w-7xl mx-auto relative">
     <div class="flex justify-start w-full md:justify-start md:w-auto">
       <div class="h-20 w-20 md:h-24 md:w-24 flex items-center justify-center rounded-full">
-        <span class="text-gray-900 text-4xl md:text-5xl font-extrabold tracking-tight select-none">[<span style="letter-spacing:0">c</span>w]</span>
+        <span class="text-white text-4xl md:text-5xl font-extrabold tracking-tight select-none">[<span style="letter-spacing:0">c</span>w]</span>
       </div>
     </div>
     <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="absolute right-4 top-1/2 transform -translate-y-1/2 btn-primary text-sm md:hidden">Get Started</a>
     <nav class="hidden md:flex space-x-8 mt-0">
-      <a href="#home" class="hover:text-indigo-400 transition">Home</a>
-      <a href="#about" class="hover:text-indigo-400 transition">About</a>
-      <a href="#services" class="hover:text-indigo-400 transition">Services</a>
-      <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+      <a href="#home" class="text-white hover:text-indigo-400 transition">Home</a>
+      <a href="#about" class="text-white hover:text-indigo-400 transition">About</a>
+      <a href="#services" class="text-white hover:text-indigo-400 transition">Services</a>
+      <a href="#contact" class="text-white hover:text-indigo-400 transition">Contact</a>
     </nav>
     <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="hidden md:inline-block btn-primary text-center">Get Started</a>
   </header>
@@ -377,45 +518,66 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section-spacing bg-gray-50">
+  <section id="about" class="section-spacing bg-black/80">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal">About ConversionWing</h2>
       <p class="text-lg mb-12 reveal reveal-delay-1 mx-auto">
         ConversionWing is a results-driven social media marketing agency dedicated to elevating brands in the digital landscape. We blend creative vision with data-driven execution to deliver measurable, sustainable growth for our clients.
       </p>
-      <div class="grid-cards max-w-4xl mx-auto">
-        <div class="card reveal reveal-delay-2">
-          <h3>Our Mission</h3>
-          <p class="text-gray-600 mb-0">To empower brands to achieve their full digital potential through innovative, results-oriented social media marketing.</p>
-        </div>
-        <div class="card reveal reveal-delay-3">
-          <h3>Our Vision</h3>
-          <p class="text-gray-600 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
+              <div class="grid-cards max-w-4xl mx-auto">
+          <div class="card reveal reveal-delay-2">
+            <h3>Our Mission</h3>
+            <p class="text-gray-300 mb-0">To empower brands to achieve their full digital potential through innovative, results-oriented social media marketing.</p>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <h3>Our Vision</h3>
+            <p class="text-gray-300 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Cinematic Video Section -->
+    <section class="cinematic-section reveal">
+      <div class="video-container">
+        <video class="video-background" autoplay loop muted playsinline preload="auto" id="cinematic-video">
+          <source src="video-1080.mp4" type="video/mp4" media="(min-width: 769px)">
+          <source src="video-720.mp4" type="video/mp4" media="(max-width: 768px)">
+          <source src="AD _1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <button class="sound-button muted" id="sound-toggle" onclick="toggleSound()">
+          <svg class="muted-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          </svg>
+          <svg class="unmuted-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+        </button>
+      </div>
+    </section>
 
   <!-- Services Section -->
   <section id="services" class="section-spacing">
     <div class="max-w-7xl mx-auto container-padding">
       <h2 class="text-center text-gradient reveal mb-16">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card text-center reveal reveal-delay-1">
+        <div class="card service-card text-center reveal reveal-delay-1">
           <h3>Social Media Management</h3>
-          <p class="text-gray-600 mb-0">Strategic content creation, scheduling, and audience engagement across all major platforms.</p>
+          <p class="text-gray-300">Strategic content creation, scheduling, and audience engagement across all major platforms.</p>
         </div>
-        <div class="card text-center reveal reveal-delay-2">
+        <div class="card service-card text-center reveal reveal-delay-2">
           <h3>Providing Sales Professionals</h3>
-          <p class="text-gray-600 mb-0">Connect with pre-vetted, high-performing sales experts to accelerate your business growth and conversions.</p>
+          <p class="text-gray-300">Connect with pre-vetted, high-performing sales experts to accelerate your business growth and conversions.</p>
         </div>
-        <div class="card text-center reveal reveal-delay-3">
+        <div class="card service-card text-center reveal reveal-delay-3">
           <h3>Paid Advertising</h3>
-          <p class="text-gray-600 mb-0">ROI-driven advertising campaigns on Facebook, Instagram, LinkedIn, and more.</p>
+          <p class="text-gray-300">ROI-driven advertising campaigns on Facebook, Instagram, LinkedIn, and more.</p>
         </div>
-        <div class="card text-center reveal reveal-delay-4">
+        <div class="card service-card text-center reveal reveal-delay-4">
           <h3>Influencer Marketing</h3>
-          <p class="text-gray-600 mb-0">Partner with top influencers to amplify your brand and drive measurable results.</p>
+          <p class="text-gray-300">Partner with top influencers to amplify your brand and drive measurable results.</p>
         </div>
       </div>
       <div class="text-center mt-16">
@@ -425,17 +587,17 @@
   </section>
 
   <!-- Testimonials Section (Placeholder) -->
-  <section class="section-spacing bg-gray-50">
+  <section class="section-spacing bg-black/80">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal mb-16">Client Testimonials</h2>
       <div class="grid-cards max-w-4xl mx-auto">
         <div class="card reveal reveal-delay-1">
           <p class="text-lg mb-6">"ConversionWing tripled our Instagram engagement in just two months. Their expertise is unmatched."</p>
-          <span class="font-bold text-indigo-600">— Marketing Director, Ecom Brand</span>
+          <span class="font-bold text-indigo-400">— Marketing Director, Ecom Brand</span>
         </div>
         <div class="card reveal reveal-delay-2">
           <p class="text-lg mb-6">"Professional, creative, and always ahead of the curve. Our brand visibility has never been stronger."</p>
-          <span class="font-bold text-indigo-600">— CEO, Startup</span>
+          <span class="font-bold text-indigo-400">— CEO, Startup</span>
         </div>
       </div>
     </div>
@@ -471,7 +633,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 bg-gray-900 text-center text-gray-300">
+  <footer class="py-12 bg-black/90 text-center text-gray-400">
     <div class="max-w-7xl mx-auto container-padding">
       <div class="mb-4">
         &copy; <script>document.write(new Date().getFullYear())</script> ConversionWing. All rights reserved.
@@ -528,6 +690,25 @@
       });
     });
 
+    // Sound toggle functionality
+    function toggleSound() {
+      const video = document.getElementById('cinematic-video');
+      const soundButton = document.getElementById('sound-toggle');
+      const mutedIcon = soundButton.querySelector('.muted-icon');
+      const unmutedIcon = soundButton.querySelector('.unmuted-icon');
+      
+      if (video.muted) {
+        video.muted = false;
+        soundButton.classList.remove('muted');
+        mutedIcon.style.display = 'none';
+        unmutedIcon.style.display = 'block';
+      } else {
+        video.muted = true;
+        soundButton.classList.add('muted');
+        mutedIcon.style.display = 'block';
+        unmutedIcon.style.display = 'none';
+      }
+    }
 
   </script>
 </body>
