@@ -710,6 +710,35 @@
       }
     }
 
+    // Ensure seamless video looping
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('cinematic-video');
+      
+      if (video) {
+        // Set video properties for seamless looping
+        video.loop = true;
+        video.muted = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        
+        // Handle video end event to ensure immediate restart
+        video.addEventListener('ended', function() {
+          video.currentTime = 0;
+          video.play();
+        });
+        
+        // Handle video pause to ensure it keeps playing
+        video.addEventListener('pause', function() {
+          if (!video.ended) {
+            video.play();
+          }
+        });
+        
+        // Preload the video for smoother looping
+        video.preload = 'auto';
+      }
+    });
+
   </script>
 </body>
 </html> 
