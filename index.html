@@ -302,37 +302,6 @@
       overflow: hidden;
       padding: 0 1rem;
     }
-    /* Hover light-sweep border for carousel */
-    .carousel-container {
-      border-radius: 1rem;
-      z-index: 0;
-    }
-    .carousel-container::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 2px; /* border thickness */
-      background: linear-gradient(90deg, transparent, rgba(102,126,234,0.85), transparent);
-      background-size: 200% 100%;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      /* show only the border ring */
-      -webkit-mask: 
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-    }
-    .carousel-container:hover::before {
-      opacity: 1;
-      animation: carouselBorderSweep 2.5s linear infinite;
-    }
-    @keyframes carouselBorderSweep {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
     
     .carousel-track {
       display: flex;
@@ -453,6 +422,24 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Futuristic minimal 3D/Parallax helpers (vanilla JS powered) */
+    .section-3d {
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+      perspective: 1000px;
+    }
+    .parallax-bg::before {
+      content: '';
+      position: absolute;
+      inset: -30% -30% auto -30%;
+      height: 120%;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(102,126,234,0.15), transparent 70%),
+                  radial-gradient(40% 40% at 60% 60%, rgba(118,75,162,0.12), transparent 70%);
+      z-index: -1;
+      transition: transform 0.6s ease-out;
+      filter: blur(20px);
+    }
     
     /* Smooth scrolling */
     html {
@@ -511,37 +498,6 @@
       transform: translateY(-2px);
     }
     
-    /* ===================== */
-    /* Futuristic scroll FX  */
-    /* ===================== */
-    /* Subtle hero parallax glow without HTML changes */
-    #home { position: relative; }
-    #home::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      left: 50%;
-      width: 120vmin;
-      height: 120vmin;
-      transform: translate(-50%, var(--parallaxY, 0));
-      background: radial-gradient(closest-side, rgba(102,126,234,0.25), rgba(118,75,162,0.15) 50%, transparent 70%);
-      filter: blur(30px);
-      opacity: 0.6;
-      z-index: 0;
-      pointer-events: none;
-      will-change: transform;
-    }
-    /* Ensure hero content sits above glow */
-    #home .container-padding { position: relative; z-index: 1; }
-
-    /* Service cards: minimal 3D lift on reveal */
-    .card { will-change: transform, box-shadow; transform-style: preserve-3d; }
-    .card.reveal { transform: translateY(24px) scale(0.98); }
-    .card.reveal.active { transform: translateY(0) scale(1.02); box-shadow: 0 28px 60px rgba(102,126,234,0.18); }
-
-    /* Section fade-up refinement (inherits existing .reveal) */
-    section.reveal { opacity: 0; transform: translateY(40px); }
-    section.reveal.active { opacity: 1; transform: translateY(0); transition: opacity .8s cubic-bezier(0.4,0,0.2,1), transform .8s cubic-bezier(0.4,0,0.2,1); }
 
   </style>
 </head>
@@ -564,7 +520,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="section-spacing text-center relative reveal">
+  <section id="home" class="section-spacing text-center relative parallax-bg section-3d reveal">
     <div class="max-w-4xl mx-auto container-padding">
       <h1 class="mb-8 reveal">
         Accelerate Your Growth with <span class="text-gradient">ConversionWing</span>
@@ -580,7 +536,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section-spacing bg-black/80">
+  <section id="about" class="section-spacing bg-black/80 section-3d reveal">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal">About ConversionWing</h2>
       <p class="text-lg mb-12 reveal reveal-delay-1 mx-auto">
@@ -594,13 +550,13 @@
           <div class="card reveal reveal-delay-3">
             <h3>Our Vision</h3>
             <p class="text-gray-300 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
-          </div>
+        </div>
         </div>
       </div>
     </section>
 
     <!-- Cinematic Video Section -->
-    <section class="cinematic-section reveal">
+    <section class="cinematic-section reveal section-3d">
       <div class="video-container">
         <video class="video-background" autoplay loop muted playsinline preload="auto" id="cinematic-video" webkit-playsinline>
           <source src="video-1080.mp4" type="video/mp4" media="(min-width: 769px)">
@@ -617,11 +573,11 @@
             <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
           </svg>
         </button>
-      </div>
-    </section>
+    </div>
+  </section>
 
   <!-- Services Section -->
-  <section id="services" class="section-spacing reveal">
+  <section id="services" class="section-spacing section-3d reveal">
     <div class="max-w-7xl mx-auto container-padding">
       <h2 class="text-center text-gradient reveal mb-16">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -649,7 +605,7 @@
   </section>
 
   <!-- Testimonials Section (Placeholder) -->
-  <section class="section-spacing bg-black/80 reveal">
+  <section class="section-spacing bg-black/80 section-3d reveal">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal mb-16">Client Testimonials</h2>
       <div class="grid-cards max-w-4xl mx-auto">
@@ -666,7 +622,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-spacing reveal">
+  <section id="contact" class="section-spacing section-3d reveal">
           <div class="max-w-4xl mx-auto container-padding text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Let’s Connect</h2>
       <p class="text-lg text-gray-300 mb-8">Ready to elevate your brand? Contact us to discuss your goals and discover how ConversionWing can help you succeed.</p>
@@ -722,10 +678,69 @@
       });
     }, observerOptions);
 
-    // Observe all elements with reveal classes (including sections)
+    // Observe all elements with reveal classes
     document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, section.reveal');
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
       revealElements.forEach(el => observer.observe(el));
+
+      /* Parallax + 3D scroll effects (minimal and performant) */
+      const hero = document.querySelector('#home.parallax-bg');
+      const sections3d = document.querySelectorAll('.section-3d');
+      const serviceCards = document.querySelectorAll('#services .card');
+
+      const lerp = (a, b, t) => a + (b - a) * t;
+      let lastY = window.scrollY;
+
+      const onScroll = () => {
+        const y = window.scrollY;
+
+        // Subtle parallax for hero background glow
+        if (hero) {
+          const strength = Math.min(20, y * 0.05);
+          hero.style.setProperty('--parallaxY', `${strength}px`);
+          const before = getComputedStyle(hero, '::before');
+          // emulate movement by translating the element itself
+          hero.style.transform = `translateZ(0)`; // promote layer
+          hero.style.setProperty('--dummy', before.content); // no-op to avoid reflow
+          hero.style.setProperty('will-change', 'transform');
+          hero.style.setProperty('transition', 'transform 0.6s ease-out');
+          hero.style.transform = `translate3d(0, ${-strength}px, 0)`;
+        }
+
+        // 3D lift + subtle scale for sections when in view
+        sections3d.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          const inView = rect.top < window.innerHeight * 0.85 && rect.bottom > window.innerHeight * 0.15;
+          const progress = Math.min(1, Math.max(0, 1 - rect.top / (window.innerHeight * 0.8)));
+          const translate = inView ? lerp(20, 0, progress) : 20;
+          const scale = inView ? lerp(0.98, 1, progress) : 0.98;
+          const shadow = inView ? lerp(0, 0.25, progress) : 0;
+          sec.style.transform = `translate3d(0, ${translate}px, 0) scale(${scale})`;
+          sec.style.boxShadow = `0 ${shadow * 40}px ${shadow * 80}px rgba(0,0,0,${shadow})`;
+        });
+
+        // Service cards: slight 3D zoom + lift when approaching viewport
+        serviceCards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const visible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+          if (visible) {
+            const p = Math.min(1, Math.max(0, 1 - rect.top / (window.innerHeight * 0.9)));
+            const s = lerp(0.99, 1.025, p);
+            const t = lerp(12, 0, p);
+            card.style.transform = `translate3d(0, ${t}px, 0) scale(${s})`;
+            card.style.boxShadow = `0 ${p * 30}px ${p * 60}px rgba(0,0,0,${0.25 * p})`;
+          } else {
+            card.style.transform = `translate3d(0, 12px, 0) scale(0.99)`;
+            card.style.boxShadow = `0 0 0 rgba(0,0,0,0)`;
+          }
+        });
+
+        lastY = y;
+      };
+
+      // Initial states
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
     });
 
     // Header scroll effect
@@ -841,27 +856,6 @@
         });
       }
     });
-
-    // Hero parallax using rAF
-    (function() {
-      const hero = document.getElementById('home');
-      if (!hero) return;
-      let ticking = false;
-      const onScroll = () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const scrollY = window.scrollY || window.pageYOffset;
-            // Move the glow slower than scroll for parallax (divide by factor)
-            const y = Math.round(scrollY * -0.15);
-            hero.style.setProperty('--parallaxY', y + 'px');
-            ticking = false;
-          });
-          ticking = true;
-        }
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
 
   </script>
 </body>
