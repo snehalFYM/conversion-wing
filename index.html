@@ -302,6 +302,37 @@
       overflow: hidden;
       padding: 0 1rem;
     }
+    /* Hover light-sweep border for carousel */
+    .carousel-container {
+      border-radius: 1rem;
+      z-index: 0;
+    }
+    .carousel-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px; /* border thickness */
+      background: linear-gradient(90deg, transparent, rgba(102,126,234,0.85), transparent);
+      background-size: 200% 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      /* show only the border ring */
+      -webkit-mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+    }
+    .carousel-container:hover::before {
+      opacity: 1;
+      animation: carouselBorderSweep 2.5s linear infinite;
+    }
+    @keyframes carouselBorderSweep {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
     
     .carousel-track {
       display: flex;
@@ -480,6 +511,37 @@
       transform: translateY(-2px);
     }
     
+    /* ===================== */
+    /* Futuristic scroll FX  */
+    /* ===================== */
+    /* Subtle hero parallax glow without HTML changes */
+    #home { position: relative; }
+    #home::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      width: 120vmin;
+      height: 120vmin;
+      transform: translate(-50%, var(--parallaxY, 0));
+      background: radial-gradient(closest-side, rgba(102,126,234,0.25), rgba(118,75,162,0.15) 50%, transparent 70%);
+      filter: blur(30px);
+      opacity: 0.6;
+      z-index: 0;
+      pointer-events: none;
+      will-change: transform;
+    }
+    /* Ensure hero content sits above glow */
+    #home .container-padding { position: relative; z-index: 1; }
+
+    /* Service cards: minimal 3D lift on reveal */
+    .card { will-change: transform, box-shadow; transform-style: preserve-3d; }
+    .card.reveal { transform: translateY(24px) scale(0.98); }
+    .card.reveal.active { transform: translateY(0) scale(1.02); box-shadow: 0 28px 60px rgba(102,126,234,0.18); }
+
+    /* Section fade-up refinement (inherits existing .reveal) */
+    section.reveal { opacity: 0; transform: translateY(40px); }
+    section.reveal.active { opacity: 1; transform: translateY(0); transition: opacity .8s cubic-bezier(0.4,0,0.2,1), transform .8s cubic-bezier(0.4,0,0.2,1); }
 
   </style>
 </head>
@@ -502,7 +564,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="section-spacing text-center relative">
+  <section id="home" class="section-spacing text-center relative reveal">
     <div class="max-w-4xl mx-auto container-padding">
       <h1 class="mb-8 reveal">
         Accelerate Your Growth with <span class="text-gradient">ConversionWing</span>
@@ -559,7 +621,7 @@
     </section>
 
   <!-- Services Section -->
-  <section id="services" class="section-spacing">
+  <section id="services" class="section-spacing reveal">
     <div class="max-w-7xl mx-auto container-padding">
       <h2 class="text-center text-gradient reveal mb-16">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -587,7 +649,7 @@
   </section>
 
   <!-- Testimonials Section (Placeholder) -->
-  <section class="section-spacing bg-black/80">
+  <section class="section-spacing bg-black/80 reveal">
     <div class="max-w-6xl mx-auto container-padding text-center">
       <h2 class="text-gradient reveal mb-16">Client Testimonials</h2>
       <div class="grid-cards max-w-4xl mx-auto">
@@ -604,7 +666,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-spacing">
+  <section id="contact" class="section-spacing reveal">
           <div class="max-w-4xl mx-auto container-padding text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Let’s Connect</h2>
       <p class="text-lg text-gray-300 mb-8">Ready to elevate your brand? Contact us to discuss your goals and discover how ConversionWing can help you succeed.</p>
@@ -660,9 +722,9 @@
       });
     }, observerOptions);
 
-    // Observe all elements with reveal classes
+    // Observe all elements with reveal classes (including sections)
     document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, section.reveal');
       revealElements.forEach(el => observer.observe(el));
     });
 
@@ -779,6 +841,27 @@
         });
       }
     });
+
+    // Hero parallax using rAF
+    (function() {
+      const hero = document.getElementById('home');
+      if (!hero) return;
+      let ticking = false;
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            // Move the glow slower than scroll for parallax (divide by factor)
+            const y = Math.round(scrollY * -0.15);
+            hero.style.setProperty('--parallaxY', y + 'px');
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
 
   </script>
 </body>
