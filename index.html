@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConversionWing - Social Media Marketing Agency</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>ConversionWing Marketing - AI Automation & Voice Bots</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="cw a-01.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script type="text/javascript">
         window.omnisend = window.omnisend || [];
         omnisend.push(["brandID", "6889a4a6cfa3b70cffc65a0c"]);
@@ -17,846 +17,536 @@
         var t=document.getElementsByTagName("script")[0];
         t.parentNode.insertBefore(e,t)}();
   </script>
-  <style>
-    body { 
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      letter-spacing: -0.01em;
-      font-weight: 400;
-    }
-    
-    .bg-main { background: #0a0a0a; }
-    
-    .text-gradient {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 700;
-    }
-    
-    /* Typography improvements */
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-    
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-    
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-    
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    
-    p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: #d1d5db;
-      margin-bottom: 1.5rem;
-      max-width: 65ch;
-    }
-    
-    .text-lg {
-      font-size: 1.125rem;
-      line-height: 1.7;
-    }
-    
-    .text-xl {
-      font-size: 1.25rem;
-      line-height: 1.6;
-    }
-    
-    /* Professional spacing */
-    .section-spacing {
-      padding: 6rem 0;
-    }
-    
-    .container-padding {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .section-spacing {
-        padding: 8rem 0;
-      }
-      
-      .container-padding {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-    }
-    
-    /* Card improvements */
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 1.25rem;
-      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-height: 200px;
-    }
-    
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px 0 rgba(102,126,234,0.15);
-      border-color: rgba(102,126,234,0.3);
-      background: rgba(255,255,255,0.05);
-    }
-    
-    /* Service card specific styles for consistent alignment */
-    .service-card {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-height: 220px;
-    }
-    
-    .service-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      min-height: 3rem;  /* forces equal header height */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .service-card p {
-      margin: 0;
-      flex: 1;
-      display: flex;
-      align-items: flex-start;
-      line-height: 1.6;
-    }
-    
-    /* Cinematic video section styles - 9:16 aspect ratio */
-    .cinematic-section {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-    }
-    
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .video-background {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      z-index: 1;
-    }
-    
-    /* Desktop: Center video with black background on sides */
-    @media (min-width: 769px) {
-      .video-background {
-        max-width: 56.25vh; /* 9:16 aspect ratio */
-        max-height: 100vh;
-      }
-    }
-    
-    /* Mobile: Full width */
-    @media (max-width: 768px) {
-      .video-background {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 2;
-      pointer-events: none;
-    }
-    
-    /* Floating sound button */
-    .sound-button {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.7);
-      border: 2px solid rgba(102, 126, 234, 0.5);
-      color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-    }
-    
-    .sound-button:hover {
-      background: rgba(102, 126, 234, 0.2);
-      border-color: rgba(102, 126, 234, 0.8);
-      box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
-      transform: scale(1.1);
-    }
-    
-    .sound-button svg {
-      width: 24px;
-      height: 24px;
-      transition: all 0.3s ease;
-    }
-    
-    .sound-button.muted svg {
-      opacity: 0.7;
-    }
-    
-    @media (max-width: 768px) {
-      .sound-button {
-        bottom: 1.5rem;
-        left: 1.5rem;
-        width: 50px;
-        height: 50px;
-      }
-      
-      .sound-button svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-    
-    /* Button improvements */
-    .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 1rem 2rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(102,126,234,0.3);
-      letter-spacing: 0.01em;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102,126,234,0.4);
-    }
-    
-    .btn-lg {
-      padding: 1.25rem 2.5rem;
-      font-size: 1.125rem;
-    }
-    
-    /* Grid improvements */
-    .grid-cards {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    
-    @media (min-width: 768px) {
-      .grid-cards {
-        gap: 2.5rem;
-      }
-    }
-    
-    /* Carousel styles */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      padding: 0 1rem;
-    }
-    
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      gap: 2rem;
-    }
-    
-    .carousel-slide {
-      flex: 0 0 calc(25% - 1.5rem);
-      min-width: 280px;
-    }
-    
-    @media (max-width: 1024px) {
-      .carousel-slide {
-        flex: 0 0 calc(50% - 1rem);
-      }
-    }
-    
-    @media (max-width: 640px) {
-      .carousel-slide {
-        flex: 0 0 calc(100% - 0.5rem);
-      }
-    }
-    
-    .carousel-nav {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 2rem;
-    }
-    
-    .carousel-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-dot.active {
-      background: #667eea;
-      transform: scale(1.2);
-    }
-    
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(102, 126, 234, 0.1);
-      border: 1px solid rgba(102, 126, 234, 0.3);
-      color: #667eea;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 10;
-    }
-    
-    .carousel-arrow:hover {
-      background: rgba(102, 126, 234, 0.2);
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .carousel-arrow.prev {
-      left: 0;
-    }
-    
-    .carousel-arrow.next {
-      right: 0;
-    }
-    
-    @media (max-width: 768px) {
-      .carousel-arrow {
-        display: none;
-      }
-    }
-    
-    /* Scroll reveal animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .reveal-left.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .reveal-right.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* Futuristic minimal 3D/Parallax helpers (vanilla JS powered) */
-    .section-3d {
-      transform-style: preserve-3d;
-      will-change: transform, opacity;
-      perspective: 1000px;
-    }
-    .parallax-bg::before {
-      content: '';
-      position: absolute;
-      inset: -30% -30% auto -30%;
-      height: 120%;
-      background: radial-gradient(60% 60% at 50% 40%, rgba(102,126,234,0.15), transparent 70%),
-                  radial-gradient(40% 40% at 60% 60%, rgba(118,75,162,0.12), transparent 70%);
-      z-index: -1;
-      transition: transform 0.6s ease-out;
-      filter: blur(20px);
-    }
-    
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Header improvements */
-    header {
-      transition: all 0.3s ease;
-      padding: 1.5rem 0;
-    }
-    
-    header.scrolled {
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      padding: 1rem 0;
-    }
-    
-    /* Navigation improvements */
-    nav a {
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      position: relative;
-    }
-    
-    nav a:hover {
-      color: #667eea;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    /* Social media icons */
-    .social-icons a {
-      transition: all 0.3s ease;
-      padding: 0.5rem;
-      border-radius: 50%;
-    }
-    
-    .social-icons a:hover {
-      background: rgba(102,126,234,0.1);
-      transform: translateY(-2px);
-    }
-    
-
-  </style>
 </head>
-<body class="bg-main text-white overflow-x-hidden">
+<body>
   <!-- Header -->
-  <header class="w-full container-padding flex flex-col md:flex-row md:justify-between md:items-center max-w-7xl mx-auto relative">
-    <div class="flex justify-start w-full md:justify-start md:w-auto">
-      <div class="h-20 w-20 md:h-24 md:w-24 flex items-center justify-center rounded-full">
-        <span class="text-white text-4xl md:text-5xl font-extrabold tracking-tight select-none">[<span style="letter-spacing:0">c</span>w]</span>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <span class="header__logo-text">[<span class="header__logo-c">c</span>w]</span>
       </div>
+      <nav class="header__nav">
+        <a href="#home" class="header__nav-link">Home</a>
+        <a href="#services" class="header__nav-link">Services</a>
+        <a href="#use-cases" class="header__nav-link">Use Cases</a>
+        <a href="#contact" class="header__nav-link">Contact</a>
+      </nav>
+      <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="header__cta">Book Demo</a>
     </div>
-    <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="absolute right-4 top-1/2 transform -translate-y-1/2 btn-primary text-sm md:hidden">Get Started</a>
-    <nav class="hidden md:flex space-x-8 mt-0">
-      <a href="#home" class="text-white hover:text-indigo-400 transition">Home</a>
-      <a href="#about" class="text-white hover:text-indigo-400 transition">About</a>
-      <a href="#services" class="text-white hover:text-indigo-400 transition">Services</a>
-      <a href="#contact" class="text-white hover:text-indigo-400 transition">Contact</a>
-    </nav>
-    <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="hidden md:inline-block btn-primary text-center">Get Started</a>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="section-spacing text-center relative parallax-bg section-3d reveal">
-    <div class="max-w-4xl mx-auto container-padding">
-      <h1 class="mb-8 reveal">
-        Accelerate Your Growth with <span class="text-gradient">ConversionWing</span>
+  <section id="home" class="hero">
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Automate Everything.<br>
+          <span class="hero__title-accent">Grow Effortlessly.</span>
       </h1>
-      <p class="text-xl mb-12 reveal reveal-delay-1 mx-auto">
-        Expert Social Media Marketing for Ambitious Brands.<br />
-        Drive engagement, expand your reach, and increase revenue with our proven strategies.
-      </p>
-      <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="btn-primary btn-lg reveal reveal-delay-2">
-        Book a Free Consultation
+        <p class="hero__subtitle">
+          We build AI voice agents and automation systems that handle your leads, 
+          clients, and calls — while you focus on growth.
+        </p>
+        <div class="hero__actions">
+          <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="hero__cta-primary">
+            💬 Book a Demo
+          </a>
+          <a href="#how-it-works" class="hero__cta-secondary">
+            See How It Works
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__robot-container" id="robot-container">
+          <!-- Interactive 3D Robot -->
+          <div class="hero__robot" id="interactive-robot">
+            <div class="hero__robot-model">
+              <svg class="hero__robot-svg" viewBox="0 0 400 400" fill="none">
+                <defs>
+                  <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00FFC6;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#00E5C0;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0D1121;stop-opacity:1" />
+                  </linearGradient>
+                  <radialGradient id="robotGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#00FFC6;stop-opacity:0.4" />
+                    <stop offset="100%" style="stop-color:#00FFC6;stop-opacity:0" />
+                  </radialGradient>
+                  <filter id="robotFilter">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <!-- Robot Head Base -->
+                <ellipse cx="200" cy="180" rx="100" ry="80" fill="url(#robotGradient)" opacity="0.9"/>
+                
+                <!-- Robot Face -->
+                <ellipse cx="200" cy="160" rx="80" ry="60" fill="url(#robotGradient)" opacity="0.7"/>
+                
+                <!-- Eyes -->
+                <circle cx="170" cy="140" r="12" fill="#00FFC6" filter="url(#robotFilter)">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="230" cy="140" r="12" fill="#00FFC6" filter="url(#robotFilter)">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                
+                <!-- Eye Glow -->
+                <circle cx="170" cy="140" r="20" fill="url(#robotGlow)" opacity="0.6"/>
+                <circle cx="230" cy="140" r="20" fill="url(#robotGlow)" opacity="0.6"/>
+                
+                <!-- Neural Network Lines -->
+                <path d="M120 100 Q200 80 280 100" stroke="#00FFC6" stroke-width="2" fill="none" opacity="0.6">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M100 120 Q200 100 300 120" stroke="#00FFC6" stroke-width="1" fill="none" opacity="0.4">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+                </path>
+                
+                <!-- Data Points -->
+                <circle cx="120" cy="100" r="3" fill="#00FFC6" opacity="0.8">
+                  <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="280" cy="100" r="3" fill="#00FFC6" opacity="0.8">
+                  <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" begin="1s"/>
+                </circle>
+                
+                <!-- Energy Rings -->
+                <circle cx="200" cy="180" r="120" stroke="#00FFC6" stroke-width="1" fill="none" opacity="0.2">
+                  <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="200" cy="180" r="140" stroke="#00FFC6" stroke-width="1" fill="none" opacity="0.1">
+                  <animate attributeName="r" values="140;160;140" dur="8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.1;0.3;0.1" dur="8s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+            </div>
+            
+            <!-- Holographic Interface -->
+            <div class="hero__hologram">
+              <div class="hero__hologram-line hero__hologram-line--1"></div>
+              <div class="hero__hologram-line hero__hologram-line--2"></div>
+              <div class="hero__hologram-line hero__hologram-line--3"></div>
+            </div>
+          </div>
+          
+          <!-- Background Glow -->
+          <div class="hero__robot-glow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__parallax-bg"></div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section id="services" class="services">
+    <div class="services__container">
+      <h2 class="services__title">What We Do</h2>
+      <p class="services__subtitle">AI-powered solutions that transform your business operations</p>
+      
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">🤖</div>
+          <h3 class="service-card__title">AI Voice Bots</h3>
+          <p class="service-card__description">
+            Handle calls and bookings with human-like precision.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">⚙️</div>
+          <h3 class="service-card__title">Business Automation</h3>
+          <p class="service-card__description">
+            Save hours daily using n8n-powered workflows.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">📈</div>
+          <h3 class="service-card__title">Social Media Marketing</h3>
+          <p class="service-card__description">
+            Grow and convert followers automatically.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🧠</div>
+          <h3 class="service-card__title">Custom AI Agents</h3>
+          <p class="service-card__description">
+            AI assistants that talk, learn, and adapt.
+          </p>
+          </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">💬</div>
+          <h3 class="service-card__title">Chatbot Integration</h3>
+          <p class="service-card__description">
+            Smart chatbots that convert leads instantly.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">📞</div>
+          <h3 class="service-card__title">Lead Management Systems</h3>
+          <p class="service-card__description">
+            Track and automate client communication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="benefits" class="benefits">
+    <div class="benefits__container">
+      <div class="benefits__content">
+        <h2 class="benefits__title">Don't just automate — scale intelligently.</h2>
+        
+        <div class="benefits__list">
+          <div class="benefit-item">
+            <div class="benefit-item__icon">⏰</div>
+            <div class="benefit-item__text">Works 24/7</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-item__icon">🎯</div>
+            <div class="benefit-item__text">Never misses a lead</div>
+        </div>
+          <div class="benefit-item">
+            <div class="benefit-item__icon">💰</div>
+            <div class="benefit-item__text">10× cheaper than hiring staff</div>
+        </div>
+          <div class="benefit-item">
+            <div class="benefit-item__icon">🧠</div>
+            <div class="benefit-item__text">Learns from every call</div>
+        </div>
+        </div>
+      </div>
+      
+      <div class="benefits__visual">
+        <div class="benefits__ai-brain">
+          <svg viewBox="0 0 300 300" fill="none">
+            <defs>
+              <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00FFC6;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0D1121;stop-opacity:1" />
+              </linearGradient>
+              <filter id="brainGlow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            <!-- AI Brain -->
+            <ellipse cx="150" cy="150" rx="80" ry="60" fill="url(#brainGradient)" opacity="0.3"/>
+            <ellipse cx="150" cy="140" rx="60" ry="45" fill="url(#brainGradient)" opacity="0.5"/>
+            
+            <!-- Neural Connections -->
+            <path d="M100 100 Q150 80 200 100" stroke="#00FFC6" stroke-width="2" fill="none" opacity="0.6">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M80 120 Q150 100 220 120" stroke="#00FFC6" stroke-width="1" fill="none" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <path d="M90 160 Q150 140 210 160" stroke="#00FFC6" stroke-width="1" fill="none" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+            </path>
+            
+            <!-- Data Nodes -->
+            <circle cx="100" cy="100" r="4" fill="#00FFC6" filter="url(#brainGlow)">
+              <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="100" r="4" fill="#00FFC6" filter="url(#brainGlow)">
+              <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            <circle cx="80" cy="120" r="3" fill="#00FFC6" filter="url(#brainGlow)">
+              <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="220" cy="120" r="3" fill="#00FFC6" filter="url(#brainGlow)">
+              <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="use-cases">
+    <div class="use-cases__container">
+      <h2 class="use-cases__title">Who We Help</h2>
+      
+      <div class="use-cases__grid">
+        <div class="use-case-card">
+          <div class="use-case-card__icon">💇</div>
+          <h3 class="use-case-card__title">Salons & Clinics</h3>
+          <p class="use-case-card__description">Book clients automatically.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-card__icon">🏢</div>
+          <h3 class="use-case-card__title">Real Estate</h3>
+          <p class="use-case-card__description">Convert every lead instantly.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-card__icon">💬</div>
+          <h3 class="use-case-card__title">Agencies</h3>
+          <p class="use-case-card__description">Automate reporting and onboarding.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-card__icon">🧾</div>
+          <h3 class="use-case-card__title">Service Businesses</h3>
+          <p class="use-case-card__description">Manage inquiries seamlessly.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-card__icon">🏪</div>
+          <h3 class="use-case-card__title">E-commerce</h3>
+          <p class="use-case-card__description">AI product assistance 24/7.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-card__icon">📞</div>
+          <h3 class="use-case-card__title">Customer Support</h3>
+          <p class="use-case-card__description">Smart AI-powered chat response.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="how-it-works__container">
+      <h2 class="how-it-works__title">Your AI System, Ready in 48 Hours.</h2>
+      
+      <div class="how-it-works__steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div class="step__content">
+            <h3 class="step__title">Book a Demo</h3>
+            <p class="step__description">Schedule a free consultation</p>
+          </div>
+        </div>
+        
+        <div class="step__arrow">
+          <svg viewBox="0 0 50 20" fill="none">
+            <path d="M5 10 L45 10" stroke="#00FFC6" stroke-width="2"/>
+            <path d="M35 5 L45 10 L35 15" stroke="#00FFC6" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        
+        <div class="step">
+          <div class="step__number">2</div>
+          <div class="step__content">
+            <h3 class="step__title">We Analyze Your Needs</h3>
+            <p class="step__description">Understand your workflow</p>
+          </div>
+        </div>
+        
+        <div class="step__arrow">
+          <svg viewBox="0 0 50 20" fill="none">
+            <path d="M5 10 L45 10" stroke="#00FFC6" stroke-width="2"/>
+            <path d="M35 5 L45 10 L35 15" stroke="#00FFC6" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        
+        <div class="step">
+          <div class="step__number">3</div>
+          <div class="step__content">
+            <h3 class="step__title">Build Your AI Agent</h3>
+            <p class="step__description">Custom development</p>
+          </div>
+        </div>
+        
+        <div class="step__arrow">
+          <svg viewBox="0 0 50 20" fill="none">
+            <path d="M5 10 L45 10" stroke="#00FFC6" stroke-width="2"/>
+            <path d="M35 5 L45 10 L35 15" stroke="#00FFC6" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        
+        <div class="step">
+          <div class="step__number">4</div>
+          <div class="step__content">
+            <h3 class="step__title">You Go Live</h3>
+            <p class="step__description">Start automating immediately</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Chatbot Demo Section -->
+  <section id="chatbot-demo" class="chatbot-demo">
+    <div class="chatbot-demo__container">
+      <h2 class="chatbot-demo__title">Try Our AI Assistant Live</h2>
+      <p class="chatbot-demo__subtitle">Experience the power of AI automation firsthand</p>
+      <div class="chatbot-demo__cta">
+        <a href="#chatbot" class="chatbot-demo__button">Start Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="testimonials__container">
+      <h2 class="testimonials__title">What Our Clients Say</h2>
+      
+      <div class="testimonials__carousel">
+        <div class="testimonial-card">
+          <div class="testimonial-card__avatar">👨‍💼</div>
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "We replaced 4 receptionists with 1 ConversionWing Voice Bot — ₹2L/month saved."
+            </p>
+            <div class="testimonial-card__author">— Rajesh Kumar, Clinic Owner</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-card__avatar">👩‍💻</div>
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "Automation saved us 30+ hours weekly!"
+            </p>
+            <div class="testimonial-card__author">— Priya Sharma, Agency Director</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-card__avatar">👨‍🏭</div>
+          <div class="testimonial-card__content">
+            <p class="testimonial-card__text">
+              "Social media conversions doubled — all automated."
+            </p>
+            <div class="testimonial-card__author">— Amit Patel, Service Business</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="final-cta" class="final-cta">
+    <div class="final-cta__container">
+      <h2 class="final-cta__title">Ready to Automate Your Business?</h2>
+      <p class="final-cta__subtitle">Join hundreds of businesses already scaling with AI automation</p>
+      <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="final-cta__button">
+        🚀 Book Your Free Consultation
       </a>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section-spacing bg-black/80 section-3d reveal">
-    <div class="max-w-6xl mx-auto container-padding text-center">
-      <h2 class="text-gradient reveal">About ConversionWing</h2>
-      <p class="text-lg mb-12 reveal reveal-delay-1 mx-auto">
-        ConversionWing is a results-driven social media marketing agency dedicated to elevating brands in the digital landscape. We blend creative vision with data-driven execution to deliver measurable, sustainable growth for our clients.
-      </p>
-              <div class="grid-cards max-w-4xl mx-auto">
-          <div class="card reveal reveal-delay-2">
-            <h3>Our Mission</h3>
-            <p class="text-gray-300 mb-0">To empower brands to achieve their full digital potential through innovative, results-oriented social media marketing.</p>
-          </div>
-          <div class="card reveal reveal-delay-3">
-            <h3>Our Vision</h3>
-            <p class="text-gray-300 mb-0">To be the trusted partner for brands seeking exponential growth and authentic online presence.</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cinematic Video Section -->
-    <section class="cinematic-section reveal section-3d">
-      <div class="video-container">
-        <video class="video-background" autoplay loop muted playsinline preload="auto" id="cinematic-video" webkit-playsinline>
-          <source src="video-1080.mp4" type="video/mp4" media="(min-width: 769px)">
-          <source src="video-720.mp4" type="video/mp4" media="(max-width: 768px)">
-          <source src="AD _1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-        <button class="sound-button muted" id="sound-toggle" onclick="toggleSound()">
-          <svg class="muted-icon" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-          </svg>
-          <svg class="unmuted-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-          </svg>
-        </button>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section-spacing section-3d reveal">
-    <div class="max-w-7xl mx-auto container-padding">
-      <h2 class="text-center text-gradient reveal mb-16">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card service-card text-center reveal reveal-delay-1">
-          <h3>Social Media Management</h3>
-          <p class="text-gray-300">Strategic content creation, scheduling, and audience engagement across all major platforms.</p>
-        </div>
-        <div class="card service-card text-center reveal reveal-delay-2">
-          <h3>Providing Sales Professionals</h3>
-          <p class="text-gray-300">Connect with pre-vetted, high-performing sales experts to accelerate your business growth and conversions.</p>
-        </div>
-        <div class="card service-card text-center reveal reveal-delay-3">
-          <h3>Paid Advertising</h3>
-          <p class="text-gray-300">ROI-driven advertising campaigns on Facebook, Instagram, LinkedIn, and more.</p>
-        </div>
-        <div class="card service-card text-center reveal reveal-delay-4">
-          <h3>Influencer Marketing</h3>
-          <p class="text-gray-300">Partner with top influencers to amplify your brand and drive measurable results.</p>
-        </div>
-      </div>
-      <div class="text-center mt-16">
-        <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="btn-primary reveal reveal-delay-4">Request a Consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section (Placeholder) -->
-  <section class="section-spacing bg-black/80 section-3d reveal">
-    <div class="max-w-6xl mx-auto container-padding text-center">
-      <h2 class="text-gradient reveal mb-16">Client Testimonials</h2>
-      <div class="grid-cards max-w-4xl mx-auto">
-        <div class="card reveal reveal-delay-1">
-          <p class="text-lg mb-6">"ConversionWing tripled our Instagram engagement in just two months. Their expertise is unmatched."</p>
-          <span class="font-bold text-indigo-400">— Marketing Director, Ecom Brand</span>
-        </div>
-        <div class="card reveal reveal-delay-2">
-          <p class="text-lg mb-6">"Professional, creative, and always ahead of the curve. Our brand visibility has never been stronger."</p>
-          <span class="font-bold text-indigo-400">— CEO, Startup</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section-spacing section-3d reveal">
-          <div class="max-w-4xl mx-auto container-padding text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Let’s Connect</h2>
-      <p class="text-lg text-gray-300 mb-8">Ready to elevate your brand? Contact us to discuss your goals and discover how ConversionWing can help you succeed.</p>
-      <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-bold text-white text-lg shadow hover:scale-105 transition">Start Your Project</a>
-      <div class="mt-8 flex justify-center space-x-6">
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/conversion_wing/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-gray-400 hover:text-indigo-400 text-2xl transition-colors duration-200 reveal reveal-delay-3">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/profile.php?id=61578265625259" target="_blank" class="text-gray-400 hover:text-indigo-400 text-2xl transition-colors duration-200">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/company/conversionwing" target="_blank" class="text-gray-400 hover:text-indigo-400 text-2xl transition-colors duration-200">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="py-12 bg-black/90 text-center text-gray-400">
-    <div class="max-w-7xl mx-auto container-padding">
-      <div class="mb-4">
-        &copy; <script>document.write(new Date().getFullYear())</script> ConversionWing. All rights reserved.
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <span class="footer__logo-text">[<span class="footer__logo-c">c</span>w]</span>
+        </div>
+        
+        <nav class="footer__nav">
+          <a href="#home" class="footer__nav-link">Home</a>
+          <a href="#services" class="footer__nav-link">Services</a>
+          <a href="#contact" class="footer__nav-link">Contact</a>
+          <a href="#" class="footer__nav-link">Privacy</a>
+        </nav>
+        
+        <div class="footer__contact">
+          <p class="footer__email">contact@conversionwingmarketing.com</p>
+        </div>
+        
+        <div class="footer__social">
+          <a href="https://linkedin.com/company/conversionwing" target="_blank" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/conversion_wing/" target="_blank" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/conversionwing" target="_blank" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="text-sm">
-        Designed by ConversionWing
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; <script>document.write(new Date().getFullYear())</script> ConversionWing Marketing. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Animation JavaScript -->
-  <script>
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  <!-- AI Chatbot Widget -->
+  <div class="chatbot-widget" id="chatbot-widget">
+    <div class="chatbot-widget__avatar" id="chatbot-avatar">
+      <svg viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#00FFC6"/>
+        <circle cx="15" cy="16" r="2" fill="#0D1121"/>
+        <circle cx="25" cy="16" r="2" fill="#0D1121"/>
+        <path d="M12 24 Q20 30 28 24" stroke="#0D1121" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+    <div class="chatbot-widget__window" id="chatbot-window">
+      <div class="chatbot-window__header">
+        <div class="chatbot-window__avatar">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#00FFC6"/>
+            <circle cx="9" cy="10" r="1.5" fill="#0D1121"/>
+            <circle cx="15" cy="10" r="1.5" fill="#0D1121"/>
+            <path d="M8 15 Q12 18 16 15" stroke="#0D1121" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="chatbot-window__info">
+          <div class="chatbot-window__name">ConversionWing AI</div>
+          <div class="chatbot-window__status">Online</div>
+        </div>
+        <button class="chatbot-window__close" id="chatbot-close">×</button>
+      </div>
+      <div class="chatbot-window__messages" id="chatbot-messages">
+        <div class="chatbot-message">
+          <div class="chatbot-message__avatar">
+            <svg viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="8" fill="#00FFC6"/>
+              <circle cx="7" cy="8" r="1" fill="#0D1121"/>
+              <circle cx="13" cy="8" r="1" fill="#0D1121"/>
+              <path d="M6 12 Q10 15 14 12" stroke="#0D1121" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <div class="chatbot-message__content">
+            <div class="chatbot-message__text">
+              Hi! I'm your ConversionWing AI assistant. How can I help you automate your business today?
+            </div>
+            <div class="chatbot-message__time">Just now</div>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-window__input">
+        <input type="text" placeholder="Type your message..." id="chatbot-input">
+        <button class="chatbot-window__send" id="chatbot-send">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with reveal classes
-    document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-      revealElements.forEach(el => observer.observe(el));
-
-      /* Parallax + 3D scroll effects (minimal and performant) */
-      const hero = document.querySelector('#home.parallax-bg');
-      const sections3d = document.querySelectorAll('.section-3d');
-      const serviceCards = document.querySelectorAll('#services .card');
-
-      const lerp = (a, b, t) => a + (b - a) * t;
-      let lastY = window.scrollY;
-
-      const onScroll = () => {
-        const y = window.scrollY;
-
-        // Subtle parallax for hero background glow
-        if (hero) {
-          const strength = Math.min(20, y * 0.05);
-          hero.style.setProperty('--parallaxY', `${strength}px`);
-          const before = getComputedStyle(hero, '::before');
-          // emulate movement by translating the element itself
-          hero.style.transform = `translateZ(0)`; // promote layer
-          hero.style.setProperty('--dummy', before.content); // no-op to avoid reflow
-          hero.style.setProperty('will-change', 'transform');
-          hero.style.setProperty('transition', 'transform 0.6s ease-out');
-          hero.style.transform = `translate3d(0, ${-strength}px, 0)`;
-        }
-
-        // 3D lift + subtle scale for sections when in view
-        sections3d.forEach(sec => {
-          const rect = sec.getBoundingClientRect();
-          const inView = rect.top < window.innerHeight * 0.85 && rect.bottom > window.innerHeight * 0.15;
-          const progress = Math.min(1, Math.max(0, 1 - rect.top / (window.innerHeight * 0.8)));
-          const translate = inView ? lerp(20, 0, progress) : 20;
-          const scale = inView ? lerp(0.98, 1, progress) : 0.98;
-          const shadow = inView ? lerp(0, 0.25, progress) : 0;
-          sec.style.transform = `translate3d(0, ${translate}px, 0) scale(${scale})`;
-          sec.style.boxShadow = `0 ${shadow * 40}px ${shadow * 80}px rgba(0,0,0,${shadow})`;
-        });
-
-        // Service cards: slight 3D zoom + lift when approaching viewport
-        serviceCards.forEach(card => {
-          const rect = card.getBoundingClientRect();
-          const visible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-          if (visible) {
-            const p = Math.min(1, Math.max(0, 1 - rect.top / (window.innerHeight * 0.9)));
-            const s = lerp(0.99, 1.025, p);
-            const t = lerp(12, 0, p);
-            card.style.transform = `translate3d(0, ${t}px, 0) scale(${s})`;
-            card.style.boxShadow = `0 ${p * 30}px ${p * 60}px rgba(0,0,0,${0.25 * p})`;
-          } else {
-            card.style.transform = `translate3d(0, 12px, 0) scale(0.99)`;
-            card.style.boxShadow = `0 0 0 rgba(0,0,0,0)`;
-          }
-        });
-
-        lastY = y;
-      };
-
-      // Initial states
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-    });
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Sound toggle functionality
-    function toggleSound() {
-      const video = document.getElementById('cinematic-video');
-      const soundButton = document.getElementById('sound-toggle');
-      const mutedIcon = soundButton.querySelector('.muted-icon');
-      const unmutedIcon = soundButton.querySelector('.unmuted-icon');
-      
-      if (video.muted) {
-        video.muted = false;
-        soundButton.classList.remove('muted');
-        mutedIcon.style.display = 'none';
-        unmutedIcon.style.display = 'block';
-      } else {
-        video.muted = true;
-        soundButton.classList.add('muted');
-        mutedIcon.style.display = 'block';
-        unmutedIcon.style.display = 'none';
-      }
-    }
-
-    // Ensure seamless video looping and immediate autoplay
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('cinematic-video');
-      
-      if (video) {
-        // Set video properties for seamless looping
-        video.loop = true;
-        video.muted = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        video.preload = 'auto';
-        
-        // Force play immediately
-        const playPromise = video.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // Video started playing successfully
-            console.log('Video autoplay started');
-          }).catch(error => {
-            // Autoplay was prevented, try to play on user interaction
-            console.log('Autoplay prevented, waiting for user interaction');
-            
-            // Try to play on any user interaction
-            const playOnInteraction = () => {
-              video.play().then(() => {
-                console.log('Video started on user interaction');
-                document.removeEventListener('click', playOnInteraction);
-                document.removeEventListener('touchstart', playOnInteraction);
-                document.removeEventListener('keydown', playOnInteraction);
-              }).catch(err => {
-                console.log('Still cannot play video:', err);
-              });
-            };
-            
-            document.addEventListener('click', playOnInteraction);
-            document.addEventListener('touchstart', playOnInteraction);
-            document.addEventListener('keydown', playOnInteraction);
-          });
-        }
-        
-        // Handle video end event to ensure immediate restart
-        video.addEventListener('ended', function() {
-          video.currentTime = 0;
-          video.play().catch(err => console.log('Error restarting video:', err));
-        });
-        
-        // Handle video pause to ensure it keeps playing
-        video.addEventListener('pause', function() {
-          if (!video.ended && !video.paused) {
-            video.play().catch(err => console.log('Error resuming video:', err));
-          }
-        });
-        
-        // Handle video load event to ensure it starts playing
-        video.addEventListener('loadeddata', function() {
-          if (video.paused) {
-            video.play().catch(err => console.log('Error playing on load:', err));
-          }
-        });
-        
-        // Handle canplay event
-        video.addEventListener('canplay', function() {
-          if (video.paused) {
-            video.play().catch(err => console.log('Error playing on canplay:', err));
-          }
-        });
-      }
-    });
-
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html> 
