@@ -26,6 +26,7 @@ class ConversionWingPremiumApp {
     this.initScrollAnimations();
     this.initHeaderScroll();
     this.initLazyLoading();
+    this.initFeedbackForm();
     this.isLoaded = true;
     
     console.log('ConversionWing Premium App initialized successfully');
@@ -64,11 +65,13 @@ class ConversionWingPremiumApp {
   initInteractiveRobot() {
     this.robotElement = document.getElementById('interactive-robot');
     this.robotContainer = document.getElementById('robot-container');
+    this.robotBubble = document.getElementById('robot-bubble');
     this.robotPosition = { x: 0, y: 0, z: 0 };
     this.isDragging = false;
     this.dragStart = { x: 0, y: 0 };
     this.robotVelocity = { x: 0, y: 0 };
     this.robotBounce = 0;
+    this.bubbleShown = false;
     
     if (this.robotElement) {
       // Mouse interactions for desktop
@@ -100,6 +103,16 @@ class ConversionWingPremiumApp {
       this.robotElement.addEventListener('click', (e) => {
         e.preventDefault();
         this.animateRobotClick();
+        this.showRobotBubble();
+      });
+      
+      // Show bubble on first hover
+      this.robotContainer.addEventListener('mouseenter', () => {
+        if (!this.bubbleShown) {
+          setTimeout(() => {
+            this.showRobotBubble();
+          }, 1000);
+        }
       });
       
       // Add playful hover effects
@@ -320,6 +333,18 @@ class ConversionWingPremiumApp {
     animate();
   }
 
+  showRobotBubble() {
+    if (this.robotBubble && !this.bubbleShown) {
+      this.robotBubble.classList.add('show');
+      this.bubbleShown = true;
+      
+      // Hide bubble after 4 seconds
+      setTimeout(() => {
+        this.robotBubble.classList.remove('show');
+      }, 4000);
+    }
+  }
+
   animateRobotClick() {
     // Add click animation with scale and rotation
     const originalTransform = this.robotElement.style.transform;
@@ -345,6 +370,9 @@ class ConversionWingPremiumApp {
     
     // Add particle effect
     this.createParticleEffect();
+    
+    // Show bubble
+    this.showRobotBubble();
   }
 
   triggerHolographicEffect() {
@@ -740,6 +768,51 @@ class ConversionWingPremiumApp {
         const perfData = performance.getEntriesByType('navigation')[0];
         console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
       });
+    }
+  }
+
+  initFeedbackForm() {
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackMessage = document.getElementById('feedback-message');
+    
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const textarea = feedbackForm.querySelector('.testimonials__feedback-textarea');
+        const message = textarea.value.trim();
+        
+        if (message.length < 10) {
+          this.showFeedbackMessage('Please write at least 10 characters for your review.', 'error');
+          return;
+        }
+        
+        // Simulate form submission
+        this.showFeedbackMessage('Thank you for your feedback! We appreciate you taking the time to share your experience with us.', 'success');
+        
+        // Clear form
+        textarea.value = '';
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          this.hideFeedbackMessage();
+        }, 5000);
+      });
+    }
+  }
+
+  showFeedbackMessage(text, type) {
+    const feedbackMessage = document.getElementById('feedback-message');
+    if (feedbackMessage) {
+      feedbackMessage.textContent = text;
+      feedbackMessage.className = `testimonials__feedback-message ${type} show`;
+    }
+  }
+
+  hideFeedbackMessage() {
+    const feedbackMessage = document.getElementById('feedback-message');
+    if (feedbackMessage) {
+      feedbackMessage.classList.remove('show');
     }
   }
 

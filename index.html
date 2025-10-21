@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ConversionWing Marketing - AI Automation & Voice Bots</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="cw a-01.png">
   <script type="text/javascript">
@@ -60,6 +60,14 @@
         <div class="hero__robot-container" id="robot-container">
           <!-- Interactive 3D Robot -->
           <div class="hero__robot" id="interactive-robot">
+            <!-- Welcome Text Bubble -->
+            <div class="hero__robot-bubble" id="robot-bubble">
+              <div class="hero__robot-bubble-content">
+                <p>Hey there! Want to automate your business with AI?</p>
+                <div class="hero__robot-bubble-arrow"></div>
+              </div>
+            </div>
+            
             <div class="hero__robot-model">
               <svg class="hero__robot-svg" viewBox="0 0 400 400" fill="none">
                 <defs>
@@ -89,10 +97,10 @@
                 
                 <!-- Eyes -->
                 <circle cx="170" cy="140" r="12" fill="#00FFC6" filter="url(#robotFilter)">
-                  <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.8;1;0.3;1;0.8" dur="4s" repeatCount="indefinite"/>
                 </circle>
                 <circle cx="230" cy="140" r="12" fill="#00FFC6" filter="url(#robotFilter)">
-                  <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                  <animate attributeName="opacity" values="0.8;1;0.3;1;0.8" dur="4s" repeatCount="indefinite" begin="0.5s"/>
                 </circle>
                 
                 <!-- Eye Glow -->
@@ -403,34 +411,43 @@
       
       <div class="testimonials__carousel">
         <div class="testimonial-card">
-          <div class="testimonial-card__avatar">👨‍💼</div>
+          <div class="testimonial-card__avatar">👩‍💼</div>
           <div class="testimonial-card__content">
             <p class="testimonial-card__text">
-              "We replaced 4 receptionists with 1 ConversionWing Voice Bot — ₹2L/month saved."
+              "ConversionWing helped us automate our client calls using AI voice bots — we cut down 70% of manual work in just a month. The team truly understands modern marketing!"
             </p>
-            <div class="testimonial-card__author">— Rajesh Kumar, Clinic Owner</div>
+            <div class="testimonial-card__rating">⭐⭐⭐⭐⭐</div>
+            <div class="testimonial-card__author">— Aarohi S., Co-founder at Bliss Cosmetics</div>
           </div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-card__avatar">👩‍💻</div>
+          <div class="testimonial-card__avatar">👨‍💻</div>
           <div class="testimonial-card__content">
             <p class="testimonial-card__text">
-              "Automation saved us 30+ hours weekly!"
+              "Our sales process got a complete AI upgrade. Their automation using n8n workflows saved us time and increased leads instantly."
             </p>
-            <div class="testimonial-card__author">— Priya Sharma, Agency Director</div>
+            <div class="testimonial-card__rating">⭐⭐⭐⭐☆</div>
+            <div class="testimonial-card__author">— Rohit K., Founder at KreateTech</div>
           </div>
         </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-card__avatar">👨‍🏭</div>
-          <div class="testimonial-card__content">
-            <p class="testimonial-card__text">
-              "Social media conversions doubled — all automated."
-            </p>
-            <div class="testimonial-card__author">— Amit Patel, Service Business</div>
-          </div>
-        </div>
+      </div>
+      
+      <!-- Client Feedback Form -->
+      <div class="testimonials__feedback">
+        <h3 class="testimonials__feedback-title">🗣️ What do you think about us?</h3>
+        <form class="testimonials__feedback-form" id="feedback-form">
+          <textarea 
+            class="testimonials__feedback-textarea" 
+            placeholder="Write your review here…"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit" class="testimonials__feedback-submit">
+            Share your experience
+          </button>
+        </form>
+        <div class="testimonials__feedback-message" id="feedback-message"></div>
       </div>
     </div>
   </section>
