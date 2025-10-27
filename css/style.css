@@ -1193,11 +1193,45 @@ p {
   opacity: 1;
 }
 
-/* Make all stars after the checked one remain gray */
-.rating-input input[type="radio"]:checked ~ .star ~ .star {
-  color: #666;
-  filter: grayscale(100%);
-  opacity: 0.5;
+/* Specific rules for each star to show all previous stars as selected */
+.rating-input input[type="radio"][value="1"]:checked ~ .star:nth-child(2) {
+  color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(2),
+.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(4) {
+  color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(2),
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(4),
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(6) {
+  color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(2),
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(4),
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(6),
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(8) {
+  color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.rating-input input[type="radio"][value="5"]:checked ~ .star:nth-child(2),
+.rating-input input[type="radio"][value="5"]:checked ~ .star:nth-child(4),
+.rating-input input[type="radio"][value="5"]:checked ~ .star:nth-child(6),
+.rating-input input[type="radio"][value="5"]:checked ~ .star:nth-child(8),
+.rating-input input[type="radio"][value="5"]:checked ~ .star:nth-child(10) {
+  color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* Courses Section */
