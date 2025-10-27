@@ -865,7 +865,7 @@ Submitted on: ${new Date().toLocaleString()}
     `;
     
     // Create mailto link
-    const mailtoLink = `mailto:snehalftw@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:contact@conversionwingmarketing.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Open email client
     window.open(mailtoLink, '_blank');
