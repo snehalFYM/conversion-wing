@@ -814,7 +814,7 @@ class ConversionWingPremiumApp {
     }
   }
 
-  addReviewToPage(name, rating, feedback) {
+  addReviewToPage(name, feedback) {
     const testimonialsGrid = document.querySelector('.testimonials__carousel');
     if (!testimonialsGrid) return;
     
@@ -825,7 +825,6 @@ class ConversionWingPremiumApp {
       <div class="testimonial-card__avatar">👤</div>
       <div class="testimonial-card__content">
         <p class="testimonial-card__text">"${feedback}"</p>
-        <div class="testimonial-card__rating">${'⭐'.repeat(rating)}${'☆'.repeat(5-rating)}</div>
         <div class="testimonial-card__author">— ${name}</div>
       </div>
     `;
@@ -845,14 +844,13 @@ class ConversionWingPremiumApp {
     }, 100);
   }
 
-  sendReviewEmail(name, rating, feedback) {
+  sendReviewEmail(name, feedback) {
     // Create email content
     const emailSubject = `New Review from ${name} - ConversionWing Website`;
     const emailBody = `
 New review submitted on ConversionWing website:
 
 Name: ${name}
-Rating: ${rating}/5 stars
 Feedback: ${feedback}
 
 Submitted on: ${new Date().toLocaleString()}
@@ -865,7 +863,7 @@ Submitted on: ${new Date().toLocaleString()}
     window.open(mailtoLink, '_blank');
     
     // Also log to console for development
-    console.log('Review submitted:', { name, rating, feedback });
+    console.log('Review submitted:', { name, feedback });
   }
 
   showFeedbackMessage(text, type) {

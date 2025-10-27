@@ -1153,65 +1153,6 @@ p {
   color: var(--color-grey-dark);
 }
 
-.rating-input {
-  display: flex;
-  gap: var(--spacing-sm);
-  align-items: center;
-}
-
-.rating-input input[type="radio"] {
-  display: none;
-}
-
-.rating-input .star {
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  filter: grayscale(100%);
-  opacity: 0.5;
-}
-
-/* Star rating system - right to left */
-.rating-input {
-  display: flex;
-  flex-direction: row-reverse; /* Reverse the order visually */
-  gap: var(--spacing-sm);
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.rating-input .star {
-  color: #666;
-  filter: grayscale(100%);
-  opacity: 0.5;
-  transition: all var(--transition-normal);
-  cursor: pointer;
-}
-
-.rating-input .star:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1);
-  color: #ffd700;
-}
-
-.rating-input input[type="radio"] {
-  display: none;
-}
-
-/* When a radio button is checked, make that star and all stars to the right gold */
-.rating-input input[type="radio"]:checked ~ .star {
-  color: #ffd700;
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-/* Make all stars after the checked one remain gray */
-.rating-input input[type="radio"]:checked ~ .star ~ .star {
-  color: #666;
-  filter: grayscale(100%);
-  opacity: 0.5;
-}
 
 /* Courses Section */
 .courses {
