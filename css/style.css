@@ -1171,7 +1171,7 @@ p {
   opacity: 0.5;
 }
 
-/* Star rating system - show all stars up to selected rating */
+/* Star rating system - right to left (5 stars on right, 1 star on left) */
 .rating-input .star {
   color: #666;
   filter: grayscale(100%);
@@ -1186,39 +1186,39 @@ p {
   color: #ffd700;
 }
 
-/* When a radio button is checked, make that star and all previous stars gold */
+/* When a radio button is checked, make that star and all stars to the right gold */
 .rating-input input[type="radio"]:checked ~ .star {
   color: #ffd700;
   filter: grayscale(0%);
   opacity: 1;
 }
 
-/* Specific rules for each star to show all previous stars as selected */
-.rating-input input[type="radio"][value="1"]:checked ~ .star:nth-child(2) {
+/* Specific rules for right-to-left rating system */
+.rating-input input[type="radio"][value="1"]:checked ~ .star:nth-child(10) {
   color: #ffd700;
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(2),
-.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(4) {
+.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(8),
+.rating-input input[type="radio"][value="2"]:checked ~ .star:nth-child(10) {
   color: #ffd700;
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(2),
-.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(4),
-.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(6) {
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(6),
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(8),
+.rating-input input[type="radio"][value="3"]:checked ~ .star:nth-child(10) {
   color: #ffd700;
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(2),
 .rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(4),
 .rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(6),
-.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(8) {
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(8),
+.rating-input input[type="radio"][value="4"]:checked ~ .star:nth-child(10) {
   color: #ffd700;
   filter: grayscale(0%);
   opacity: 1;
