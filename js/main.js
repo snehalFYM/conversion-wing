@@ -781,17 +781,11 @@ class ConversionWingPremiumApp {
         
         const formData = new FormData(feedbackForm);
         const name = formData.get('name').trim();
-        const rating = formData.get('rating');
         const feedback = formData.get('feedback').trim();
         
         // Validation
         if (!name || name.length < 2) {
           this.showFeedbackMessage('Please enter a valid name (at least 2 characters).', 'error');
-          return;
-        }
-        
-        if (!rating) {
-          this.showFeedbackMessage('Please select a rating.', 'error');
           return;
         }
         
@@ -801,10 +795,10 @@ class ConversionWingPremiumApp {
         }
         
         // Add review to the testimonials section
-        this.addReviewToPage(name, rating, feedback);
+        this.addReviewToPage(name, feedback);
         
         // Send email notification
-        this.sendReviewEmail(name, rating, feedback);
+        this.sendReviewEmail(name, feedback);
         
         // Show success message
         this.showFeedbackMessage('Thank you for your review! It has been added to our testimonials.', 'success');
