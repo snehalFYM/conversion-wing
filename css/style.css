@@ -1171,15 +1171,33 @@ p {
   opacity: 0.5;
 }
 
-.rating-input input[type="radio"]:checked ~ .star,
+/* Star rating system - show all stars up to selected rating */
+.rating-input .star {
+  color: #666;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all var(--transition-normal);
+}
+
 .rating-input .star:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.1);
+  color: #ffd700;
 }
 
+/* When a radio button is checked, make that star and all previous stars gold */
 .rating-input input[type="radio"]:checked ~ .star {
   color: #ffd700;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Make all stars after the checked one remain gray */
+.rating-input input[type="radio"]:checked ~ .star ~ .star {
+  color: #666;
+  filter: grayscale(100%);
+  opacity: 0.5;
 }
 
 /* Courses Section */
