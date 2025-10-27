@@ -28,7 +28,7 @@
       <nav class="header__nav">
         <a href="#home" class="header__nav-link">Home</a>
         <a href="#services" class="header__nav-link">Services</a>
-        <a href="#use-cases" class="header__nav-link">Use Cases</a>
+        <a href="#courses" class="header__nav-link">Courses</a>
         <a href="#contact" class="header__nav-link">Contact</a>
       </nav>
       <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="header__cta">Book Demo</a>
@@ -286,51 +286,6 @@
     </div>
   </section>
 
-  <!-- Use Cases Section -->
-  <section id="use-cases" class="use-cases">
-    <div class="use-cases__container">
-      <h2 class="use-cases__title">Who We Help</h2>
-      
-      <div class="use-cases__grid">
-        <div class="use-case-card">
-          <div class="use-case-card__icon">💇</div>
-          <h3 class="use-case-card__title">Salons & Clinics</h3>
-          <p class="use-case-card__description">Book clients automatically.</p>
-        </div>
-        
-        <div class="use-case-card">
-          <div class="use-case-card__icon">🏢</div>
-          <h3 class="use-case-card__title">Real Estate</h3>
-          <p class="use-case-card__description">Convert every lead instantly.</p>
-        </div>
-        
-        <div class="use-case-card">
-          <div class="use-case-card__icon">💬</div>
-          <h3 class="use-case-card__title">Agencies</h3>
-          <p class="use-case-card__description">Automate reporting and onboarding.</p>
-        </div>
-        
-        <div class="use-case-card">
-          <div class="use-case-card__icon">🧾</div>
-          <h3 class="use-case-card__title">Service Businesses</h3>
-          <p class="use-case-card__description">Manage inquiries seamlessly.</p>
-        </div>
-        
-        <div class="use-case-card">
-          <div class="use-case-card__icon">🏪</div>
-          <h3 class="use-case-card__title">E-commerce</h3>
-          <p class="use-case-card__description">AI product assistance 24/7.</p>
-        </div>
-        
-        <div class="use-case-card">
-          <div class="use-case-card__icon">📞</div>
-          <h3 class="use-case-card__title">Customer Support</h3>
-          <p class="use-case-card__description">Smart AI-powered chat response.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- How It Works Section -->
   <section id="how-it-works" class="how-it-works">
     <div class="how-it-works__container">
@@ -399,7 +354,7 @@
       <h2 class="chatbot-demo__title">Try Our AI Assistant Live</h2>
       <p class="chatbot-demo__subtitle">Experience the power of AI automation firsthand</p>
       <div class="chatbot-demo__cta">
-        <a href="#chatbot" class="chatbot-demo__button">Start Conversation</a>
+        <a href="#chatbot-widget" class="chatbot-demo__button" onclick="document.getElementById('chatbot-avatar').click(); return false;">Start Conversation</a>
       </div>
     </div>
   </section>
@@ -433,18 +388,52 @@
         </div>
       </div>
       
-      <!-- Client Feedback Form -->
+      <!-- Rate & Review Form -->
       <div class="testimonials__feedback">
-        <h3 class="testimonials__feedback-title">🗣️ What do you think about us?</h3>
-        <form class="testimonials__feedback-form" id="feedback-form">
-          <textarea 
-            class="testimonials__feedback-textarea" 
-            placeholder="Write your review here…"
-            rows="4"
-            required
-          ></textarea>
+        <h3 class="testimonials__feedback-title">🗣️ Rate & Review Us</h3>
+        <form class="testimonials__feedback-form" id="rate-review-form">
+          <div class="form-group">
+            <label for="reviewer-name" class="form-label">Name *</label>
+            <input 
+              type="text" 
+              id="reviewer-name" 
+              name="name"
+              class="form-input" 
+              placeholder="Your name"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Rating *</label>
+            <div class="rating-input">
+              <input type="radio" id="star5" name="rating" value="5" required>
+              <label for="star5" class="star">⭐</label>
+              <input type="radio" id="star4" name="rating" value="4" required>
+              <label for="star4" class="star">⭐</label>
+              <input type="radio" id="star3" name="rating" value="3" required>
+              <label for="star3" class="star">⭐</label>
+              <input type="radio" id="star2" name="rating" value="2" required>
+              <label for="star2" class="star">⭐</label>
+              <input type="radio" id="star1" name="rating" value="1" required>
+              <label for="star1" class="star">⭐</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reviewer-feedback" class="form-label">Feedback *</label>
+            <textarea 
+              id="reviewer-feedback"
+              name="feedback"
+              class="form-textarea" 
+              placeholder="Share your experience with us..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          
           <button type="submit" class="testimonials__feedback-submit">
-            Share your experience
+            Submit Review
           </button>
         </form>
         <div class="testimonials__feedback-message" id="feedback-message"></div>
@@ -460,6 +449,68 @@
       <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="final-cta__button">
         🚀 Book Your Free Consultation
       </a>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="courses">
+    <div class="courses__container">
+      <h2 class="courses__title">Courses</h2>
+      <p class="courses__insight">"We don't just automate your systems — we teach you how to automate them."</p>
+      
+      <div class="courses__content">
+        <div class="courses__description">
+          <p>Learn the fundamentals of AI automation, n8n workflows, and voice bot development with our comprehensive course offerings.</p>
+        </div>
+        
+        <div class="courses__cta">
+          <a href="#courses" class="courses__button" onclick="alert('Courses page coming soon!'); return false;">
+            Explore Courses
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact__container">
+      <h2 class="contact__title">Get In Touch</h2>
+      <p class="contact__subtitle">Ready to automate your business? Let's discuss your needs.</p>
+      
+      <div class="contact__content">
+        <div class="contact__info">
+          <div class="contact__item">
+            <div class="contact__icon">📧</div>
+            <div class="contact__details">
+              <h3>Email Us</h3>
+              <p>contact@conversionwingmarketing.com</p>
+            </div>
+          </div>
+          
+          <div class="contact__item">
+            <div class="contact__icon">📞</div>
+            <div class="contact__details">
+              <h3>Call Us</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+          
+          <div class="contact__item">
+            <div class="contact__icon">💬</div>
+            <div class="contact__details">
+              <h3>Live Chat</h3>
+              <p>Available 24/7 via our AI assistant</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact__cta">
+          <a href="https://form.typeform.com/to/J69LoKme" target="_blank" class="contact__button">
+            Schedule a Free Consultation
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

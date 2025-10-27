@@ -772,26 +772,45 @@ class ConversionWingPremiumApp {
   }
 
   initFeedbackForm() {
-    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackForm = document.getElementById('rate-review-form');
     const feedbackMessage = document.getElementById('feedback-message');
     
     if (feedbackForm) {
       feedbackForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const textarea = feedbackForm.querySelector('.testimonials__feedback-textarea');
-        const message = textarea.value.trim();
+        const formData = new FormData(feedbackForm);
+        const name = formData.get('name').trim();
+        const rating = formData.get('rating');
+        const feedback = formData.get('feedback').trim();
         
-        if (message.length < 10) {
-          this.showFeedbackMessage('Please write at least 10 characters for your review.', 'error');
+        // Validation
+        if (!name || name.length < 2) {
+          this.showFeedbackMessage('Please enter a valid name (at least 2 characters).', 'error');
           return;
         }
         
-        // Simulate form submission
-        this.showFeedbackMessage('Thank you for your feedback! We appreciate you taking the time to share your experience with us.', 'success');
+        if (!rating) {
+          this.showFeedbackMessage('Please select a rating.', 'error');
+          return;
+        }
+        
+        if (!feedback || feedback.length < 10) {
+          this.showFeedbackMessage('Please write at least 10 characters for your feedback.', 'error');
+          return;
+        }
+        
+        // Add review to the testimonials section
+        this.addReviewToPage(name, rating, feedback);
+        
+        // Send email notification
+        this.sendReviewEmail(name, rating, feedback);
+        
+        // Show success message
+        this.showFeedbackMessage('Thank you for your review! It has been added to our testimonials.', 'success');
         
         // Clear form
-        textarea.value = '';
+        feedbackForm.reset();
         
         // Hide message after 5 seconds
         setTimeout(() => {
@@ -799,6 +818,60 @@ class ConversionWingPremiumApp {
         }, 5000);
       });
     }
+  }
+
+  addReviewToPage(name, rating, feedback) {
+    const testimonialsGrid = document.querySelector('.testimonials__carousel');
+    if (!testimonialsGrid) return;
+    
+    // Create new testimonial card
+    const newReview = document.createElement('div');
+    newReview.className = 'testimonial-card';
+    newReview.innerHTML = `
+      <div class="testimonial-card__avatar">👤</div>
+      <div class="testimonial-card__content">
+        <p class="testimonial-card__text">"${feedback}"</p>
+        <div class="testimonial-card__rating">${'⭐'.repeat(rating)}${'☆'.repeat(5-rating)}</div>
+        <div class="testimonial-card__author">— ${name}</div>
+      </div>
+    `;
+    
+    // Add animation class
+    newReview.style.opacity = '0';
+    newReview.style.transform = 'translateY(30px)';
+    
+    // Insert at the beginning
+    testimonialsGrid.insertBefore(newReview, testimonialsGrid.firstChild);
+    
+    // Animate in
+    setTimeout(() => {
+      newReview.style.transition = 'all 0.6s ease';
+      newReview.style.opacity = '1';
+      newReview.style.transform = 'translateY(0)';
+    }, 100);
+  }
+
+  sendReviewEmail(name, rating, feedback) {
+    // Create email content
+    const emailSubject = `New Review from ${name} - ConversionWing Website`;
+    const emailBody = `
+New review submitted on ConversionWing website:
+
+Name: ${name}
+Rating: ${rating}/5 stars
+Feedback: ${feedback}
+
+Submitted on: ${new Date().toLocaleString()}
+    `;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:snehalftw@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.open(mailtoLink, '_blank');
+    
+    // Also log to console for development
+    console.log('Review submitted:', { name, rating, feedback });
   }
 
   showFeedbackMessage(text, type) {
